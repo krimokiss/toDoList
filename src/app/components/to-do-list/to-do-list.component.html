@@ -1,0 +1,77 @@
+
+<!-- <section class="container">
+    <h1 class="text-center">My TO DO LIST</h1>
+<div class="searchBar">
+        <form class="examplee-form" (submit)="createTodo()">
+        <input type="text" name="todoLabel" [(ngModel)]='newTodo' />
+        <button mat-raised-button  (click)="createTodo()">Ajouter</button>
+      </form> 
+    </div>
+<div class="list d-flex text-center">
+    <mat-divider></mat-divider>
+    <div class="col-sm-6" >Description</div>
+    <div class="col-sm-3" >Edit</div>
+    <div class="col-sm-3" >Delete</div>
+</div>
+<mat-divider></mat-divider>
+
+</section> -->
+
+
+<div class="container-fluid bg-light">
+    <div class="container bg-light">
+
+        <div class="row mt-4" style="height: 500px;">
+            <div class="col"></div>
+            <div class="col-md-6 bg-white shadow">
+
+                <div class="card bg-primary mt-4">
+                    <h4 class="text-white p-3 pt-2 pb-2 text-center" style="font-size: 2rem">Organizer</h4>
+                </div>
+
+                <div class="shadow">
+                    <div class="input-group p-4">
+                        <input type="text" class="form-control" placeholder="Entrer une tâche à faire " name="task" [(ngModel)]="addTaskValue">
+                        <button class="btn btn-outline-success" type="button" (click)="addTask()" >+</button>
+                      </div>
+                </div>
+
+                <h4 class="text-primary mt-4 text-center" style="font-size: 1.5rem">Tâches : </h4>
+
+                <div style="overflow-y: auto; height: 350px;">
+                    <div class="m-3" *ngFor="let task of taskArr">
+                        <div class="p-2 shadow border" id="tasks">
+                            <div class="input-group row ps-3 test" >
+                                <div class="card col-md-10 border-0"> {{task.description}} </div>
+                                <button class="btn btn-outline-primary col me-2"  data-toggle="modal" type="button" data-target="#exampleModal" (click)="call(task)"><mat-icon>edit</mat-icon></button>
+                                <div class="btn btn-outline-danger col" style="margin-left: 5px" type="button" (click)="deleteTask(task)"><mat-icon>close</mat-icon></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modifier la tâche</h5>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="input-group p-4">
+                                <input type="text" class="form-control" placeholder="Enter task " name="task" [(ngModel)]="editTaskValue">
+                                <button class="btn btn-outline-success" type="button" data-dismiss="modal" (click)="editTask()">Mettre à jour</button>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col"></div>
+
+        </div>
+
+    </div>
+    
+</div>
