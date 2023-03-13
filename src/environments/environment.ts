@@ -4,7 +4,7 @@
 
 export const environment = {
   // API_URL : 'https://easycontratserver.onrender.com/api',
-    API_URL : 'http://localhost:5000/api',
+    API_URL : 'https://to-do-list-server-six.vercel.app',
   production: true
 };
 

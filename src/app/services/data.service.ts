@@ -14,7 +14,7 @@ export class DataService {
   backend = `${environment.API_URL}`
   constructor(private httpClient: HttpClient) {
 
-    this.serviceUrl = "https://to-do-list-server-six.vercel.app/"
+    this.serviceUrl = "https://to-do-list-server-six.vercel.app"
 
   }
 
