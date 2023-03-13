@@ -19,21 +19,21 @@ export class DataService {
   }
 
   addTask(task: Tasks): Observable<Tasks> {
-    return this.httpClient.post<Tasks>(this.serviceUrl, task);
+    return this.httpClient.post<Tasks>(this.backend, task);
   }
 
   getAllTask(): Observable<Tasks[]> {
-    return this.httpClient.get<Tasks[]>(this.serviceUrl);
+    return this.httpClient.get<Tasks[]>(this.backend);
   }
 
 
   deleteTask(task: Tasks): Observable<Tasks> {
     console.log(task);
-    return this.httpClient.delete<Tasks>(this.serviceUrl + '/' + task.todo_id); 
+    return this.httpClient.delete<Tasks>(this.backend + '/' + task.todo_id); 
   }
   editTask(task : Tasks) : Observable<Tasks> {
     console.log(task)
-    return this.httpClient.put<Tasks>(this.serviceUrl+ '/' + task.todo_id,task);
+    return this.httpClient.put<Tasks>(this.backend+ '/' + task.todo_id,task);
     }
 
 }
