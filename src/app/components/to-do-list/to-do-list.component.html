@@ -31,7 +31,7 @@
 
                 <div class="shadow">
                     <div class="input-group p-4">
-                        <input type="text" class="form-control" placeholder="Entrer une tâche à faire " name="task" [(ngModel)]="addTaskValue">
+                        <input type="text" class="form-control" placeholder="Entrer une tâche à faire " name="task" [(ngModel)]="addTaskValue" (keypress)="send($event)">
                         <button class="btn btn-outline-success" type="button" (click)="addTask()" >+</button>
                       </div>
                 </div>
@@ -55,7 +55,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Modifier la tâche</h5>
-                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="close"></button>
                         </div>
                         <div class="modal-body">
                             <div class="input-group p-4">

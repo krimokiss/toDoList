@@ -79,5 +79,11 @@ export class ToDoListComponent implements OnInit {
     console.log(etask);
     
   }
+  send(event: KeyboardEvent) {
+    if (event.code === "Enter") {
+      this.addTask()
+    }
+  }
+  
 
 }

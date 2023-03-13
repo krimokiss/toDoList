@@ -13,7 +13,7 @@ export class DataService {
 
   constructor(private httpClient: HttpClient) {
 
-    this.serviceUrl = "http://localhost:5000/todos"
+    this.serviceUrl = "https://to-do-list-server-six.vercel.app/"
 
   }
 
@@ -28,9 +28,7 @@ export class DataService {
 
   deleteTask(task: Tasks): Observable<Tasks> {
     console.log(task);
-    return this.httpClient.delete<Tasks>(this.serviceUrl + '/' + task.todo_id);
-   
-    
+    return this.httpClient.delete<Tasks>(this.serviceUrl + '/' + task.todo_id); 
   }
   editTask(task : Tasks) : Observable<Tasks> {
     console.log(task)
